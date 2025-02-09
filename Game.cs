@@ -9,445 +9,504 @@ using Core.Spins;
 
 namespace VampireRichesFullAPI_5;
 
-//Game Modes will be associated with runners in the following way:
 public class GameModeRunners
 {
     public static Dictionary<GameMode, IGameModeRunner> Runners =
         new()
         {
             {
-    GameModeExtension.BaseSpin,
-    new SpinGameModeRunner(new SpinMode
-                       {
-                           Evaluator = new SpinModeBaseSpin(GameModeExtension.BaseSpin),
-                           AllowedSymbols =
-                           [
-                               SymbolExtensions.Hi1,
-SymbolExtensions.Hi2,
-SymbolExtensions.Hi3,
-SymbolExtensions.Hi4,
-SymbolExtensions.Low1,
-SymbolExtensions.Low2,
-SymbolExtensions.Low3,
-SymbolExtensions.Low4,
-
-                           ],
-                           AllowedTransitions = 
-                           [
-                               GameMode.None,
-GameModeExtension.FreeSpins7,
-GameModeExtension.FreeSpins9,
-GameModeExtension.FreeSpins11,
-
-                           ],
-                           Paytable =
-                               new()
-                               {
-                                   { SymbolExtensions.Wild, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi1, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi2, [0.3f,0.6f,1.5f,] },
-{ SymbolExtensions.Hi3, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Hi4, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Low1, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low2, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low3, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low4, [0.1f,0.2f,0.5f,] },
-
-                               },
-                           EvaluationMode = EvaluationMode.WaysLeftToRight,
-                           WildSymbol = SymbolExtensions.Wild,
-                           GameMode = GameModeExtension.BaseSpin
-                       },
-                       boardWidth: 5,
-                       boardHeight: 3)
-},{
-    GameModeExtension.FreeSpins7,
-    new SpinGameModeRunner(new SpinMode
-                       {
-                           Evaluator = new SpinModeFreeSpins(GameModeExtension.FreeSpins7),
-                           AllowedSymbols =
-                           [
-                               SymbolExtensions.Hi1,
-SymbolExtensions.Hi2,
-SymbolExtensions.Hi3,
-SymbolExtensions.Hi4,
-SymbolExtensions.Low1,
-SymbolExtensions.Low2,
-SymbolExtensions.Low3,
-SymbolExtensions.Low4,
-
-                           ],
-                           AllowedTransitions = 
-                           [
-                               GameMode.None,
-
-                           ],
-                           Paytable =
-                               new()
-                               {
-                                   { SymbolExtensions.Wild, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi1, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi2, [0.3f,0.6f,1.5f,] },
-{ SymbolExtensions.Hi3, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Hi4, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Low1, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low2, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low3, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low4, [0.1f,0.2f,0.5f,] },
-
-                               },
-                           EvaluationMode = EvaluationMode.WaysLeftToRight,
-                           WildSymbol = SymbolExtensions.Wild,
-                           GameMode = GameModeExtension.FreeSpins7
-                       },
-                       boardWidth: 5,
-                       boardHeight: 3)
-},{
-    GameModeExtension.FreeSpins9,
-    new SpinGameModeRunner(new SpinMode
-                       {
-                           Evaluator = new SpinModeFreeSpins(GameModeExtension.FreeSpins9),
-                           AllowedSymbols =
-                           [
-                               SymbolExtensions.Hi1,
-SymbolExtensions.Hi2,
-SymbolExtensions.Hi3,
-SymbolExtensions.Hi4,
-SymbolExtensions.Low1,
-SymbolExtensions.Low2,
-SymbolExtensions.Low3,
-SymbolExtensions.Low4,
-
-                           ],
-                           AllowedTransitions = 
-                           [
-                               GameMode.None,
-
-                           ],
-                           Paytable =
-                               new()
-                               {
-                                   { SymbolExtensions.Wild, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi1, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi2, [0.3f,0.6f,1.5f,] },
-{ SymbolExtensions.Hi3, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Hi4, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Low1, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low2, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low3, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low4, [0.1f,0.2f,0.5f,] },
-
-                               },
-                           EvaluationMode = EvaluationMode.WaysLeftToRight,
-                           WildSymbol = SymbolExtensions.Wild,
-                           GameMode = GameModeExtension.FreeSpins9
-                       },
-                       boardWidth: 5,
-                       boardHeight: 3)
-},{
-    GameModeExtension.FreeSpins11,
-    new SpinGameModeRunner(new SpinMode
-                       {
-                           Evaluator = new SpinModeFreeSpins(GameModeExtension.FreeSpins11),
-                           AllowedSymbols =
-                           [
-                               SymbolExtensions.Hi1,
-SymbolExtensions.Hi2,
-SymbolExtensions.Hi3,
-SymbolExtensions.Hi4,
-SymbolExtensions.Low1,
-SymbolExtensions.Low2,
-SymbolExtensions.Low3,
-SymbolExtensions.Low4,
-
-                           ],
-                           AllowedTransitions = 
-                           [
-                               GameMode.None,
-
-                           ],
-                           Paytable =
-                               new()
-                               {
-                                   { SymbolExtensions.Wild, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi1, [0.5f,1f,2.5f,] },
-{ SymbolExtensions.Hi2, [0.3f,0.6f,1.5f,] },
-{ SymbolExtensions.Hi3, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Hi4, [0.2f,0.4f,1f,] },
-{ SymbolExtensions.Low1, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low2, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low3, [0.1f,0.2f,0.5f,] },
-{ SymbolExtensions.Low4, [0.1f,0.2f,0.5f,] },
-
-                               },
-                           EvaluationMode = EvaluationMode.WaysLeftToRight,
-                           WildSymbol = SymbolExtensions.Wild,
-                           GameMode = GameModeExtension.FreeSpins11
-                       },
-                       boardWidth: 5,
-                       boardHeight: 3)
-},
+                GameModeExtension.BaseSpin,
+                new SpinGameModeRunner(new SpinMode
+                                       {
+                                           Evaluator = new SpinModeBaseSpin(GameModeExtension.BaseSpin),
+                                           AllowedSymbols =
+                                           [
+                                               SymbolExtensions.Hi1,
+                                               SymbolExtensions.Hi2,
+                                               SymbolExtensions.Hi3,
+                                               SymbolExtensions.Hi4,
+                                               SymbolExtensions.Low1,
+                                               SymbolExtensions.Low2,
+                                               SymbolExtensions.Low3,
+                                               SymbolExtensions.Low4,
+                                               SymbolExtensions.Scatter,
+                                           ],
+                                           AllowedTransitions =
+                                           [
+                                               GameMode.None,
+                                               GameModeExtension.FreeSpins7,
+                                               GameModeExtension.FreeSpins9,
+                                               GameModeExtension.FreeSpins11,
+                                           ],
+                                           Paytable =
+                                               new()
+                                               {
+                                                   { SymbolExtensions.Wild, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi1, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi2, [0.3f, 0.6f, 1.5f,] },
+                                                   { SymbolExtensions.Hi3, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Hi4, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Low1, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low2, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low3, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low4, [0.1f, 0.2f, 0.5f,] },
+                                               },
+                                           EvaluationMode = EvaluationMode.WaysLeftToRight,
+                                           WildSymbol = SymbolExtensions.Wild,
+                                           GameMode = GameModeExtension.BaseSpin
+                                       },
+                                       boardWidth: 5,
+                                       boardHeight: 3)
+            },
+            {
+                GameModeExtension.FreeSpins7,
+                new SpinGameModeRunner(new SpinMode
+                                       {
+                                           Evaluator = new SpinModeFreeSpins(GameModeExtension.FreeSpins7),
+                                           AllowedSymbols =
+                                           [
+                                               SymbolExtensions.Hi1,
+                                               SymbolExtensions.Hi2,
+                                               SymbolExtensions.Hi3,
+                                               SymbolExtensions.Hi4,
+                                               SymbolExtensions.Low1,
+                                               SymbolExtensions.Low2,
+                                               SymbolExtensions.Low3,
+                                               SymbolExtensions.Low4,
+                                           ],
+                                           AllowedTransitions =
+                                           [
+                                               GameMode.None,
+                                           ],
+                                           Paytable =
+                                               new()
+                                               {
+                                                   { SymbolExtensions.Wild, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi1, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi2, [0.3f, 0.6f, 1.5f,] },
+                                                   { SymbolExtensions.Hi3, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Hi4, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Low1, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low2, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low3, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low4, [0.1f, 0.2f, 0.5f,] },
+                                               },
+                                           EvaluationMode = EvaluationMode.WaysLeftToRight,
+                                           WildSymbol = SymbolExtensions.Wild,
+                                           GameMode = GameModeExtension.FreeSpins7
+                                       },
+                                       boardWidth: 5,
+                                       boardHeight: 3)
+            },
+            {
+                GameModeExtension.FreeSpins9,
+                new SpinGameModeRunner(new SpinMode
+                                       {
+                                           Evaluator = new SpinModeFreeSpins(GameModeExtension.FreeSpins9),
+                                           AllowedSymbols =
+                                           [
+                                               SymbolExtensions.Hi1,
+                                               SymbolExtensions.Hi2,
+                                               SymbolExtensions.Hi3,
+                                               SymbolExtensions.Hi4,
+                                               SymbolExtensions.Low1,
+                                               SymbolExtensions.Low2,
+                                               SymbolExtensions.Low3,
+                                               SymbolExtensions.Low4,
+                                           ],
+                                           AllowedTransitions =
+                                           [
+                                               GameMode.None,
+                                           ],
+                                           Paytable =
+                                               new()
+                                               {
+                                                   { SymbolExtensions.Wild, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi1, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi2, [0.3f, 0.6f, 1.5f,] },
+                                                   { SymbolExtensions.Hi3, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Hi4, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Low1, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low2, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low3, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low4, [0.1f, 0.2f, 0.5f,] },
+                                               },
+                                           EvaluationMode = EvaluationMode.WaysLeftToRight,
+                                           WildSymbol = SymbolExtensions.Wild,
+                                           GameMode = GameModeExtension.FreeSpins9
+                                       },
+                                       boardWidth: 5,
+                                       boardHeight: 3)
+            },
+            {
+                GameModeExtension.FreeSpins11,
+                new SpinGameModeRunner(new SpinMode
+                                       {
+                                           Evaluator = new SpinModeFreeSpins(GameModeExtension.FreeSpins11),
+                                           AllowedSymbols =
+                                           [
+                                               SymbolExtensions.Hi1,
+                                               SymbolExtensions.Hi2,
+                                               SymbolExtensions.Hi3,
+                                               SymbolExtensions.Hi4,
+                                               SymbolExtensions.Low1,
+                                               SymbolExtensions.Low2,
+                                               SymbolExtensions.Low3,
+                                               SymbolExtensions.Low4,
+                                           ],
+                                           AllowedTransitions =
+                                           [
+                                               GameMode.None,
+                                           ],
+                                           Paytable =
+                                               new()
+                                               {
+                                                   { SymbolExtensions.Wild, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi1, [0.5f, 1f, 2.5f,] },
+                                                   { SymbolExtensions.Hi2, [0.3f, 0.6f, 1.5f,] },
+                                                   { SymbolExtensions.Hi3, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Hi4, [0.2f, 0.4f, 1f,] },
+                                                   { SymbolExtensions.Low1, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low2, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low3, [0.1f, 0.2f, 0.5f,] },
+                                                   { SymbolExtensions.Low4, [0.1f, 0.2f, 0.5f,] },
+                                               },
+                                           EvaluationMode = EvaluationMode.WaysLeftToRight,
+                                           WildSymbol = SymbolExtensions.Wild,
+                                           GameMode = GameModeExtension.FreeSpins11
+                                       },
+                                       boardWidth: 5,
+                                       boardHeight: 3)
+            },
         };
 }
+
 public static class FeatureExtension
 {
     public static Feature Avalanche => new("Avalanche");
-
 }
+
 public static class GameModeExtension
 {
     public static GameMode BaseSpin = new(GameModeType.Spin, "BaseSpin");
-public static GameMode FreeSpins7 = new(GameModeType.Spin, "FreeSpins7");
-public static GameMode FreeSpins9 = new(GameModeType.Spin, "FreeSpins9");
-public static GameMode FreeSpins11 = new(GameModeType.Spin, "FreeSpins11");
-
+    public static GameMode FreeSpins7 = new(GameModeType.Spin, "FreeSpins7");
+    public static GameMode FreeSpins9 = new(GameModeType.Spin, "FreeSpins9");
+    public static GameMode FreeSpins11 = new(GameModeType.Spin, "FreeSpins11");
 }
+
 public static class SymbolExtensions
 {
     public static Symbol Hi1 = new("Hi1");
-public static Symbol Hi2 = new("Hi2");
-public static Symbol Hi3 = new("Hi3");
-public static Symbol Hi4 = new("Hi4");
-public static Symbol Low1 = new("Low1");
-public static Symbol Low2 = new("Low2");
-public static Symbol Low3 = new("Low3");
-public static Symbol Low4 = new("Low4");
-public static Symbol Scatter = new("Scatter");
-public static Symbol Wild = new("Wild");
-
+    public static Symbol Hi2 = new("Hi2");
+    public static Symbol Hi3 = new("Hi3");
+    public static Symbol Hi4 = new("Hi4");
+    public static Symbol Low1 = new("Low1");
+    public static Symbol Low2 = new("Low2");
+    public static Symbol Low3 = new("Low3");
+    public static Symbol Low4 = new("Low4");
+    public static Symbol Scatter = new("Scatter");
+    public static Symbol Wild = new("Wild");
 }
+
 public class SpinModeBaseSpin : ISpinStepEvaluator
 {
     private readonly GameMode _gameMode;
+    private static readonly Symbol EmptySymbol = new Symbol("Empty");
+
     public SpinModeBaseSpin(GameMode gameMode)
     {
         _gameMode = gameMode;
     }
+
     public GameMode GetNextMode(Step lastStep)
     {
-        int scatterCount = 0;
-        foreach (var reel in lastStep.Board.Reels)
-        {
-            scatterCount += reel.Cells.Count(c => c.Symbol.SymbolCode == SymbolExtensions.Scatter.SymbolCode);
-        }
-        if (scatterCount == 3)
-            return GameModeExtension.FreeSpins7;
-        if (scatterCount == 4)
-            return GameModeExtension.FreeSpins9;
-        if (scatterCount >= 5)
-            return GameModeExtension.FreeSpins11;
-        return GameMode.None;
+        var nextMode = GetNextModeInternal(lastStep);
+        var allowedTransitions = new List<GameMode>
+                                 {
+                                     GameMode.None,
+                                     GameModeExtension.FreeSpins7,
+                                     GameModeExtension.FreeSpins9,
+                                     GameModeExtension.FreeSpins11
+                                 };
+        if (!allowedTransitions.Contains(nextMode))
+            throw new Exception($"Transition from BaseSpin to {nextMode} is not allowed");
+        return nextMode;
     }
+
     public ISpinState GetInitialState()
     {
-        return new BaseSpinState { CascadeCount = 0 };
+        return new BaseSpinState { CurrentMultiplier = 1 };
     }
-    public Step EvaluateStep(Board board, ISpinState latestGameState, bool isInitialStep, List<CellCombination> baseWins)
+
+    public Step EvaluateStep(Board board, ISpinState latestGameState, bool isInitialStep,
+                             List<CellCombination> baseWins)
     {
-        var baseState = (BaseSpinState)latestGameState;
-        float multiplier = baseState.CascadeCount == 0 ? 1f : (float)Math.Pow(2, baseState.CascadeCount);
-        float winAmount = baseWins.Sum(x => x.CombinationPayout) * multiplier;
-        if (baseWins.Any())
-        {
-            baseState.CascadeCount++;
-        }
-        var stepType = isInitialStep ? StepType.InitialStep : (baseWins.Any() ? StepType.Cascade : StepType.Respin);
-        return new Step(board.Clone())
-        {
-            WonCombinations = baseWins,
-            StepWin = winAmount,
-            StepType = stepType,
-            SpinStateCopy = baseState
-        };
+        var state = (BaseSpinState)latestGameState;
+        float baseTotal = baseWins.Sum(x => x.CombinationPayout);
+        var step = new Step(board)
+                   {
+                       StepWin = state.CurrentMultiplier * baseTotal,
+                       WonCombinations = baseWins,
+                       StepType = isInitialStep ? StepType.InitialStep : StepType.Cascade,
+                       SpinStateCopy = state.CloneState()
+                   };
+        return step;
     }
+
     public bool ShouldHaveNextStep(IRng rng, Step step, ISpinState gameState)
     {
         return step.WonCombinations.Any();
     }
+
     public Board PrepareBoardForNextStep(IRng rng, Step lastStep, ISpinState gameState, List<Symbol> allowedSymbols)
     {
+        // Clone the board
         Board board = lastStep.Board.Clone();
-        var removalPositions = new List<Position>();
-        foreach (var comb in lastStep.WonCombinations)
-        {
-            removalPositions.AddRange(comb.ActivatedCell);
-        }
-        if (!removalPositions.Any())
+        // Gather all positions to remove
+        var positionsToRemove = lastStep.WonCombinations
+                                        .SelectMany(cc => cc.ActivatedCell)
+                                        .Distinct()
+                                        .ToList();
+        if (!positionsToRemove.Any())
             return board;
-        int wildIndex = rng.Next(removalPositions.Count);
-        Position wildPosition = removalPositions[wildIndex];
-        for (int reelIndex = 0; reelIndex < board.Reels.Count; reelIndex++)
+
+        // Choose one random removed position to place a wild
+        var chosenPosition = positionsToRemove.First();
+
+        // Remove all winning symbols by setting them to Empty
+        foreach (var pos in positionsToRemove)
         {
-            var reel = board.Reels[reelIndex];
-            var removedYs = reel.Cells.Where(cell => removalPositions.Any(pos => pos.X == reelIndex && pos.Y == cell.Y) && !(reelIndex == wildPosition.X && cell.Y == wildPosition.Y)).ToList();
-            var remaining = reel.Cells.Except(removedYs).ToList();
-            int missing = board.Height - remaining.Count;
-            var newCells = new List<Cell>();
-            for (int i = 0; i < missing; i++)
+            var cell = board.GetCellAtPosition(pos);
+            cell.Symbol = EmptySymbol;
+        }
+
+        // Place a wild in one of the removed positions
+        board.GetCellAtPosition(chosenPosition)
+             .Symbol = SymbolExtensions.Wild;
+
+        // Gravity dropdown for each reel
+        foreach (var reel in board.Reels)
+        {
+            // For downward gravity, process from bottom up
+            for (int y = board.Height - 1; y >= 0; y--)
             {
-                var symbol = allowedSymbols[rng.Next(allowedSymbols.Count)];
-                newCells.Add(new Cell { Y = i, Symbol = symbol });
-            }
-            for (int i = 0; i < remaining.Count; i++)
-            {
-                remaining[i] = new Cell { Y = i + missing, Symbol = remaining[i].Symbol };
-            }
-            if (reelIndex == wildPosition.X)
-            {
-                bool wildExists = remaining.Any(c => c.Y == wildPosition.Y);
-                if (!wildExists)
+                if (reel.Cells[y]
+                        .Symbol
+                        .Equals(EmptySymbol))
                 {
-                    int indexToReplace = wildPosition.Y - missing;
-                    if (indexToReplace < 0 || indexToReplace >= remaining.Count)
+                    int sourceY = y - 1;
+                    while (sourceY >= 0 && reel.Cells[sourceY]
+                                               .Symbol
+                                               .Equals(EmptySymbol))
                     {
-                        remaining.Add(new Cell { Y = board.Height - 1, Symbol = SymbolExtensions.Wild });
+                        sourceY--;
                     }
-                    else
+
+                    if (sourceY >= 0)
                     {
-                        remaining[indexToReplace] = new Cell { Y = wildPosition.Y, Symbol = SymbolExtensions.Wild };
+                        reel.Cells[y].Symbol = reel.Cells[sourceY].Symbol;
+                        reel.Cells[sourceY].Symbol = EmptySymbol;
                     }
                 }
             }
-            var combined = newCells.Concat(remaining).OrderBy(c => c.Y).ToList();
-            for (int i = 0; i < combined.Count; i++)
+
+            // Fill empty cells at the top
+            for (int y = 0; y < board.Height; y++)
             {
-                combined[i] = new Cell { Y = i, Symbol = combined[i].Symbol };
+                if (reel.Cells[y]
+                        .Symbol
+                        .Equals(EmptySymbol))
+                {
+                    int index = rng.Next(allowedSymbols.Count);
+                    reel.Cells[y].Symbol = allowedSymbols[index];
+                }
             }
-            reel.Cells = combined;
         }
+
+        // Update multiplier
+        var state = (BaseSpinState)gameState;
+        state.CurrentMultiplier *= 2;
         return board;
     }
+
     public Dictionary<Feature, int> CountFeatureOccurrencesInStep(Step step)
     {
-        var dict = new Dictionary<Feature, int>();
-        if (step.WonCombinations.Any())
+        if (step.StepType.Equals(StepType.Cascade))
         {
-            dict.Add(FeatureExtension.Avalanche, step.WonCombinations.Count);
+            return new Dictionary<Feature, int> { { FeatureExtension.Avalanche, 1 } };
         }
-        return dict;
+
+        return new Dictionary<Feature, int>();
+    }
+
+    private GameMode GetNextModeInternal(Step lastStep)
+    {
+        int scatterCount = 0;
+        for (int x = 0; x < lastStep.Board.Width; x++)
+        {
+            var reel = lastStep.Board.Reels[x];
+            foreach (var cell in reel.Cells)
+            {
+                if (cell.Symbol.Equals(SymbolExtensions.Scatter))
+                {
+                    scatterCount++;
+                }
+            }
+        }
+
+        if (scatterCount == 3) return GameModeExtension.FreeSpins7;
+        if (scatterCount == 4) return GameModeExtension.FreeSpins9;
+        if (scatterCount >= 5) return GameModeExtension.FreeSpins11;
+        return GameMode.None;
     }
 }
 
-public class BaseSpinState : ISpinState
+public record BaseSpinState : ISpinState
 {
-    public int CascadeCount { get; set; }
-    public ISpinState CloneState() => this;
+    public int CurrentMultiplier { get; set; } = 1;
+    public ISpinState CloneState() => this with { };
 }
 
 public class SpinModeFreeSpins : ISpinStepEvaluator
 {
     private readonly GameMode _gameMode;
+    private static readonly Symbol EmptySymbol = new Symbol("Empty");
+
     public SpinModeFreeSpins(GameMode gameMode)
     {
         _gameMode = gameMode;
     }
-    public GameMode GetNextMode(Step lastStep) => GameMode.None;
+
+    public GameMode GetNextMode(Step lastStep)
+    {
+        return GameMode.None;
+    }
+
     public ISpinState GetInitialState()
     {
-        int spins = 0;
-        if (_gameMode.Identifier.Contains("7")) spins = 7;
-        else if (_gameMode.Identifier.Contains("9")) spins = 9;
-        else if (_gameMode.Identifier.Contains("11")) spins = 11;
-        return new FreeSpinsState { SpinsRemaining = spins, CascadeCount = 0 };
+        int initialSpins = 0;
+        if (_gameMode.Equals(GameModeExtension.FreeSpins7)) initialSpins = 7;
+        else if (_gameMode.Equals(GameModeExtension.FreeSpins9)) initialSpins = 9;
+        else if (_gameMode.Equals(GameModeExtension.FreeSpins11)) initialSpins = 11;
+        return new FreeSpinsState { FreeSpinsLeft = initialSpins, CurrentMultiplier = 1 };
     }
-    public Step EvaluateStep(Board board, ISpinState latestGameState, bool isInitialStep, List<CellCombination> baseWins)
+
+    public Step EvaluateStep(Board board, 
+                             ISpinState latestGameState, 
+                             bool isInitialStep,
+                             List<CellCombination> baseWins)
     {
-        var fsState = (FreeSpinsState)latestGameState;
-        float multiplier = fsState.CascadeCount == 0 ? 1f : (float)Math.Pow(2, fsState.CascadeCount);
-        float winAmount = baseWins.Sum(x => x.CombinationPayout) * multiplier;
-        StepType stepTypeDecision;
-        if (baseWins.Any())
-        {
-            fsState.CascadeCount++;
-            stepTypeDecision = StepType.Cascade;
-        }
-        else
-        {
-            fsState.SpinsRemaining--;
-            stepTypeDecision = StepType.Respin;
-        }
-        if (isInitialStep) stepTypeDecision = StepType.InitialStep;
-        return new Step(board.Clone())
-        {
-            WonCombinations = baseWins,
-            StepWin = winAmount,
-            StepType = stepTypeDecision,
-            SpinStateCopy = fsState
-        };
+        var state = (FreeSpinsState)latestGameState;
+        float baseTotal = baseWins.Sum(x => x.CombinationPayout);
+        var stepType = isInitialStep ? StepType.InitialStep : (baseWins.Any() ? StepType.Cascade : StepType.Respin);
+        var step = new Step(board)
+                   {
+                       StepWin = state.CurrentMultiplier * baseTotal,
+                       WonCombinations = baseWins,
+                       StepType = stepType,
+                       SpinStateCopy = state.CloneState()
+                   };
+        return step;
     }
+
     public bool ShouldHaveNextStep(IRng rng, Step step, ISpinState gameState)
     {
         var state = (FreeSpinsState)gameState;
-        return step.WonCombinations.Any() || state.SpinsRemaining > 0;
+        if (step.WonCombinations.Any()) return true;
+        if (state.FreeSpinsLeft > 0) return true;
+        return false;
     }
+
     public Board PrepareBoardForNextStep(IRng rng, Step lastStep, ISpinState gameState, List<Symbol> allowedSymbols)
     {
-        Board board = lastStep.Board.Clone();
-        var removalPositions = new List<Position>();
-        foreach (var comb in lastStep.WonCombinations)
+        var state = (FreeSpinsState)gameState;
+        Board board;
+        if (lastStep.WonCombinations.Any())
         {
-            removalPositions.AddRange(comb.ActivatedCell);
-        }
-        if (!removalPositions.Any())
-            return board;
-        int wildIndex = rng.Next(removalPositions.Count);
-        Position wildPosition = removalPositions[wildIndex];
-        for (int reelIndex = 0; reelIndex < board.Reels.Count; reelIndex++)
-        {
-            var reel = board.Reels[reelIndex];
-            var removedYs = reel.Cells.Where(cell => removalPositions.Any(pos => pos.X == reelIndex && pos.Y == cell.Y) && !(reelIndex == wildPosition.X && cell.Y == wildPosition.Y)).ToList();
-            var remaining = reel.Cells.Except(removedYs).ToList();
-            int missing = board.Height - remaining.Count;
-            var newCells = new List<Cell>();
-            for (int i = 0; i < missing; i++)
+            board = lastStep.Board.Clone();
+            var positionsToRemove = lastStep.WonCombinations
+                                            .SelectMany(cc => cc.ActivatedCell)
+                                            .Distinct()
+                                            .ToList();
+            var chosenPosition = positionsToRemove.First();
+            foreach (var pos in positionsToRemove)
             {
-                var symbol = allowedSymbols[rng.Next(allowedSymbols.Count)];
-                newCells.Add(new Cell { Y = i, Symbol = symbol });
+                var cell = board.GetCellAtPosition(pos);
+                cell.Symbol = EmptySymbol;
             }
-            for (int i = 0; i < remaining.Count; i++)
+
+            board.GetCellAtPosition(chosenPosition)
+                 .Symbol = SymbolExtensions.Wild;
+            foreach (var reel in board.Reels)
             {
-                remaining[i] = new Cell { Y = i + missing, Symbol = remaining[i].Symbol };
-            }
-            if (reelIndex == wildPosition.X)
-            {
-                bool wildExists = remaining.Any(c => c.Y == wildPosition.Y);
-                if (!wildExists)
+                for (int y = board.Height - 1; y >= 0; y--)
                 {
-                    int indexToReplace = wildPosition.Y - missing;
-                    if (indexToReplace < 0 || indexToReplace >= remaining.Count)
+                    if (reel.Cells[y]
+                            .Symbol
+                            .Equals(EmptySymbol))
                     {
-                        remaining.Add(new Cell { Y = board.Height - 1, Symbol = SymbolExtensions.Wild });
+                        int sourceY = y - 1;
+                        while (sourceY >= 0 && reel.Cells[sourceY]
+                                                   .Symbol
+                                                   .Equals(EmptySymbol))
+                        {
+                            sourceY--;
+                        }
+
+                        if (sourceY >= 0)
+                        {
+                            reel.Cells[y].Symbol = reel.Cells[sourceY].Symbol;
+                            reel.Cells[sourceY].Symbol = EmptySymbol;
+                        }
                     }
-                    else
+                }
+
+                for (int y = 0; y < board.Height; y++)
+                {
+                    if (reel.Cells[y]
+                            .Symbol
+                            .Equals(EmptySymbol))
                     {
-                        remaining[indexToReplace] = new Cell { Y = wildPosition.Y, Symbol = SymbolExtensions.Wild };
+                        int index = rng.Next(allowedSymbols.Count);
+                        reel.Cells[y].Symbol = allowedSymbols[index];
                     }
                 }
             }
-            var combined = newCells.Concat(remaining).OrderBy(c => c.Y).ToList();
-            for (int i = 0; i < combined.Count; i++)
-            {
-                combined[i] = new Cell { Y = i, Symbol = combined[i].Symbol };
-            }
-            reel.Cells = combined;
+
+            state.CurrentMultiplier *= 2;
         }
+        else
+        {
+            // No cascade win: use a fresh board and decrement free spins
+            state.FreeSpinsLeft -= 1;
+            board = Core.Spins.BoardFunctions.GetRandomBoard(lastStep.Board.Width, lastStep.Board.Height, rng,
+                                                             allowedSymbols.ToArray());
+            state.CurrentMultiplier = 1;
+        }
+
         return board;
     }
+
     public Dictionary<Feature, int> CountFeatureOccurrencesInStep(Step step)
     {
-        var dict = new Dictionary<Feature, int>();
-        if (step.WonCombinations.Any())
+        if (step.StepType.Equals(StepType.Cascade))
         {
-            dict.Add(FeatureExtension.Avalanche, step.WonCombinations.Count);
+            return new Dictionary<Feature, int> { { FeatureExtension.Avalanche, 1 } };
         }
-        return dict;
+
+        return new Dictionary<Feature, int>();
+    }
+
+    private GameMode GetNextModeInternal(Step lastStep)
+    {
+        return GameMode.None;
     }
 }
 
-public class FreeSpinsState : ISpinState
+public record FreeSpinsState : ISpinState
 {
-    public int SpinsRemaining { get; set; }
-    public int CascadeCount { get; set; }
-    public ISpinState CloneState() => this;
+    public int FreeSpinsLeft { get; set; }
+    public int CurrentMultiplier { get; set; } = 1;
+    public ISpinState CloneState() => this with { };
 }
 
